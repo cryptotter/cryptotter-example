@@ -5,15 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write \"./**/*.{js,mjs,cjs,md,json}\""
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
+    "formik": "^2.2.9",
+    "json-case": "^1.0.7",
     "next": "10.2.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.0",
