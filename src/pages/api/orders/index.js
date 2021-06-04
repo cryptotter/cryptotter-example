@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 export default async (req, res) => {
-  console.log('-----', 'process.env.API', process.env.API);
   const response = await axios.post(`${process.env.API}/v1/transaction`, {
-    shop_id: '66ac27bf-fce5-49ec-bb48-95688f6a131f',
+    shop_id: 'ac77a7e7-311e-40ec-b383-7c39f685a0eb',
     traditional_currency: {
       id: 'USD',
       amount: req.body.amount,
