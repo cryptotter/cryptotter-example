@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import {FastField, Formik} from 'formik';
 import * as yup from 'yup';
+import Head from 'next/head';
 import {create as orderCreate} from '../connnections/orders';
 
 const price = 0.001;
@@ -22,6 +23,9 @@ function Home() {
       {(form) =>
         ((globalThis.form = form), false) || (
           <div className={'w-screen h-screen flex justify-center items-center'}>
+            <Head>
+              <title>Example of shop</title>
+            </Head>
             <form onSubmit={form.handleSubmit} className={'flex flex-col'}>
               <Image
                 className={'flex'}
