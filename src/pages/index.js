@@ -17,7 +17,7 @@ function Home() {
           name: 'Very good apple',
           amount: price * values.count,
         });
-        window.location.href = `${process.env.NEXT_PUBLIC_PAYMENT}/${response.id}`;
+        window.location.href = `${process.env.NEXT_PUBLIC_PAY}/${response.id}`;
       }}
     >
       {(form) =>
