@@ -9,6 +9,7 @@
     "format": "prettier --write \"./**/*.{js,mjs,cjs,md,json}\""
   },
   "dependencies": {
+    "@cryptotter/react": "^1.0.11",
     "axios": "^0.21.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "formik": "^2.2.9",

@@ -2,9 +2,9 @@ import axios from 'axios';
 
 export default async (req, res) => {
   const response = await axios.post(
-    `${process.env.NEXT_PUBLIC_API}/v1/transaction`,
+    `${process.env.NEXT_PUBLIC_API}/api/v1/transaction`,
     {
-      shop_id: 'ac77a7e7-311e-40ec-b383-7c39f685a0eb',
+      shop_id: '66ac27bf-fce5-49ec-bb48-95688f6a131f',
       traditional_currency: {
         id: 'USD',
         amount: req.body.amount,

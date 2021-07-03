@@ -3,9 +3,14 @@ import {FastField, Formik} from 'formik';
 import * as yup from 'yup';
 import Head from 'next/head';
 import {create as orderCreate} from '../connnections/orders';
+import {CryptotterButton} from '@cryptotter/react';
+import {useState} from 'react';
 
 const price = 0.001;
 function Home() {
+  const [state, setState] = useState({
+    transactionId: null,
+  });
   return (
     <Formik
       initialValues={{count: 1}}
@@ -17,7 +22,8 @@ function Home() {
           name: 'Very good apple',
           amount: price * values.count,
         });
-        window.location.href = `${process.env.NEXT_PUBLIC_PAY}/${response.id}`;
+        state.transactionId = response.id;
+        // window.location.href = `${process.env.NEXT_PUBLIC_PAY}/${response.id}`;
       }}
     >
       {(form) =>
@@ -61,6 +67,25 @@ function Home() {
                   ${(price * 1e6 * form.values.count) / 1e6}$
                 </div>
               </div>
+              <CryptotterButton
+                onClick={async () => {
+                  await form.submitForm();
+                  if (!state.transactionId) {
+                    return false;
+                  }
+                  setState({
+                    ...state,
+                    transactionId: null,
+                  });
+
+                  return {
+                    transaction: state.transactionId,
+                  };
+                }}
+                type={'popup'}
+              >
+                Buy with crypto
+              </CryptotterButton>
               <button
                 type='submit'
                 className={'mt-2'}
