@@ -68,6 +68,7 @@ function Home() {
                 </div>
               </div>
               <CryptotterButton
+                className={'mt-2'}
                 onClick={async () => {
                   await form.submitForm();
                   if (!state.transactionId) {
