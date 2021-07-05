@@ -86,13 +86,6 @@ function Home() {
               >
                 Buy with crypto
               </CryptotterButton>
-              <button
-                type='submit'
-                className={'mt-2'}
-                onClick={form.handleSubmit}
-              >
-                Buy
-              </button>
             </form>
           </div>
         )
